@@ -48,6 +48,7 @@ namespace PS223020_note.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutNote(int id, Note note)
         {
+            note.CreateTime = DateTime.UtcNow;
             if (id != note.Id)
             {
                 return BadRequest();
